@@ -1,0 +1,214 @@
+@import "abstracts/_variables";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Red Hat Display", sans-serif;
+  background: $primary-color-black300;
+  color: $primary-color-white;
+}
+
+header {
+  width: 50vw;
+  height: 100%;
+  margin: 3rem auto;
+  text-align: center;
+  h1 {
+    font-size: $size-big;
+  }
+  p {
+    font-size: $size-small * 1.5;
+  }
+}
+
+main {
+  .password-generator {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .field {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      width: 30%;
+      height: 40%;
+
+      .output {
+        width: 5rem;
+        height: 5rem;
+        background: $primary-color-white;
+        border-radius: 50%;
+        font-size: $size-medium;
+
+        .output_valid {
+          position: relative;
+          top: -5rem;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          width: 100%;
+          height: 100%;
+          background: rgb(255, 255, 255, 0.2);
+          color: $primary-color-black100;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          backdrop-filter: blur(2px);
+        }
+        .output_backdrop {
+          position: relative;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: white;
+          color: rgb(0, 0, 0);
+          border-radius: 50%;
+        }
+      }
+    }
+
+    #copy_btn {
+      margin-top: 3rem;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+    }
+  }
+
+  .requirements {
+    margin-top: 3rem;
+    text-align: center;
+    form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin-bottom: 3rem;
+
+      .form-control {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        label {
+          width: 10rem;
+          margin-right: 1rem;
+        }
+
+        input[type="checkbox"] {
+          position: relative;
+          width: 80px;
+          height: 20px;
+          margin: 10px;
+          outline: none;
+          background: $primary-color-black300;
+          -webkit-appearance: none;
+          cursor: pointer;
+          border-radius: 20px;
+          box-shadow: -2px -2px 5px rgba(255, 255, 255, 0.3),
+            2px 2px 5px rgba(0, 0, 0, 1),
+            inset -2px -2px 5px rgba(255, 255, 255, 0.1),
+            inset 2px 2px 5px rgba(0, 0, 0, 0.5), 0 0 0 2px #1f1f1f;
+          transition: 0.5s;
+        }
+
+        input[type="checkbox"]:checked {
+          background: $primary-color-blue;
+        }
+
+        input[type="checkbox"]::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 52px;
+          height: 21px;
+          background: linear-gradient(to top, #000, #555);
+          border-radius: 20px;
+          box-shadow: 0 0 0 1px #232323;
+          transform: scale(0.98, 0.96);
+          transition: 0.5s;
+        }
+
+        input[type="checkbox"]:checked::before {
+          left: 29px;
+        }
+
+        input[type="checkbox"]::after {
+          content: "";
+          position: absolute;
+          left: 25px;
+          top: calc(50% - 2px);
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background: #555;
+          transition: 0.5s;
+        }
+
+        input[type="checkbox"]:checked::after {
+          left: calc(25px + 30px);
+          background: $primary-color-blue;
+          box-shadow: 0 0 5px $primary-color-blue, 0 0 15px $primary-color-blue,
+            0 0 30px $primary-color-blue;
+        }
+
+        #length_value {
+          margin-left: 2rem;
+        }
+      }
+
+      #length_slider {
+        margin-top: 2rem;
+
+        input[type="range"] {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          cursor: pointer;
+          background: $primary-color-black300;
+          box-shadow: -2px -2px 5px rgba(255, 255, 255, 0.3),
+            2px 2px 5px rgba(0, 0, 0, 1),
+            inset -2px -2px 5px rgba(255, 255, 255, 0.1),
+            inset 2px 2px 5px rgba(0, 0, 0, 0.5), 0 0 0 2px #1f1f1f;
+          border-radius: 20px;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          width: 15px;
+          height: 15px;
+          background: linear-gradient(
+            to top,
+            rgb(40, 40, 40),
+            $primary-color-blue
+          );
+          border-radius: 50%;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .btn {
+    padding: 0.8rem 1.2rem;
+    border-radius: 20px;
+    background: $primary-color-contrast;
+    color: $primary-color-white;
+    cursor: pointer;
+    transition: all 0.5s;
+
+    &:hover {
+      color: $primary-color-blue;
+      background: $primary-color-black200;
+    }
+  }
+}

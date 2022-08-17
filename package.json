@@ -1,0 +1,19 @@
+{
+  "name": "password-generator",
+  "version": "1.0.0",
+  "description": "Password generator with nice animations",
+  "main": "app.js",
+  "scripts": {
+    "sass-dev": "sass --watch scss:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sHarpCSX/password-generator.git"
+  },
+  "author": "sHarpCSX",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sHarpCSX/password-generator/issues"
+  },
+  "homepage": "https://github.com/sHarpCSX/password-generator#readme"
+}

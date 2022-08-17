@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;700&display=swap" rel="stylesheet">
+  <title>Password Magic</title>
+  <script type="module" src="app.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>Password Magic</h1>
+    <p>Welche Anforderungen muss dein Passwort erfüllen?</p>
+  </header>
+
+
+  <main>
+
+    <div class="password-generator">
+      <div class="field">
+        <div class="output">
+          <div class="output_backdrop"></div>
+          <div class="output_valid"></div>
+        </div>
+        <div class="output">
+          <div class="output_backdrop"></div>
+          <div class="output_valid"></div>
+        </div>
+        <div class="output">
+          <div class="output_backdrop"></div>
+          <div class="output_valid"></div>
+        </div>
+        <div class="output">
+          <div class="output_backdrop"></div>
+          <div class="output_valid"></div>
+        </div>
+        <div class="output">
+          <div class="output_backdrop"></div>
+          <div class="output_valid"></div>
+        </div>
+        <div class="output">
+          <div class="output_backdrop"></div>
+          <div class="output_valid"></div>
+        </div>
+        <div class="output">
+          <div class="output_backdrop"></div>
+          <div class="output_valid"></div>
+        </div>
+        <div class="output">
+          <div class="output_backdrop"></div>
+          <div class="output_valid"></div>
+        </div>
+        <div class="output">
+          <div class="output_backdrop"></div>
+          <div class="output_valid"></div>
+        </div>
+        <div class="output">
+          <div class="output_backdrop"></div>
+          <div class="output_valid"></div>
+        </div>
+
+      </div>
+      <button class="btn" id="copy_btn">Kopieren</button>
+    </div>
+
+    <div class="requirements">
+      <form action="">
+
+        <div class="form-control">
+          <label for="letters">Buchstaben</label>
+          <input type="checkbox" id="letters" name="letters" value="letters" checked>
+        </div>
+
+        <div class="form-control">
+          <label for="numbers">Nummern</label>
+          <input type="checkbox" id="numbers" name="numbers" value="numbers">
+        </div>
+
+        <div class="form-control">
+          <label for="specials">Sonderzeichen</label>
+          <input type="checkbox" id="specials" name="specials" value="specials">
+        </div>
+
+        <div id="length_slider" class="form-control">
+          <label for="length">Anzahl Zeichen:</label>
+          <input type="range" min="0" max="50" value="25" class="length_slider" onchange="setLength()" name="length">
+          <span id="length_value">25</span>
+        </div>
+      </form>
+      <button class="btn">generiere Passwort</button>
+    </div>
+  </main>
+</body>
+
+</html>
