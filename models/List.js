@@ -22,7 +22,6 @@ export default class List {
     divValid.setAttribute("class", "output_valid");
 
     const randomNumber = Math.floor(Math.random() * animationString.length) / 2;
-    /* divValid.textContent = string[randomNumber]; */
 
     const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 

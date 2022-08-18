@@ -1,5 +1,5 @@
-import Password from "/Password.js";
-import List from "/List.js";
+import Password from "/models/Password.js";
+import List from "/models/List.js";
 
 const btn = document.getElementById("generate_btn");
 const listElement = document.querySelector(".field");
