@@ -13,6 +13,15 @@ export default class Password {
   }
 
   createPassword() {
+    if (
+      !this.letters.checked &&
+      !this.numbers.checked &&
+      !this.specials.checked
+    ) {
+      alert("Bitte wähle Anforderungen aus!");
+      return this.password;
+    }
+
     if (this.letters.checked) this.string += lettersString;
 
     if (this.numbers.checked) this.string += numbersString;

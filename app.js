@@ -11,6 +11,7 @@ let passwordLength = 25;
 function createPassword(length, letters, numbers, specials) {
   const string = new Password(length, letters, numbers, specials);
   const password = string.createPassword();
+  if (password === "") return;
 
   const list = new List(password, string, listElement, passwordLength);
   list.updateList();
