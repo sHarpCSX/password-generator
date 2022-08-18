@@ -35,7 +35,6 @@ export default class List {
       divValid.style.display = "flex";
     };
     loop();
-
     return li;
   }
 

@@ -42,8 +42,8 @@ main {
       list-style: none;
 
       .output {
-        width: 5rem;
-        height: 5rem;
+        width: 4rem;
+        height: 4rem;
         background: $primary-color-white;
         border-radius: 20px;
         font-size: $size-medium;
@@ -65,7 +65,7 @@ main {
           justify-content: center;
           align-items: center;
           border-radius: 20px;
-          /*      animation: appear 2s; */
+          animation: appear 2s;
         }
         .output_backdrop {
           position: relative;
@@ -93,6 +93,17 @@ main {
           }
         }
       }
+    }
+
+    #passwordCopy {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: $size-small * 1.5;
+      background: transparent;
+      border: none;
+      color: white;
+      width: 30rem;
+      opacity: 0;
     }
 
     .btn_container {

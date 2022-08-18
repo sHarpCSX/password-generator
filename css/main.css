@@ -38,8 +38,8 @@ main .password-generator .field {
   list-style: none;
 }
 main .password-generator .field .output {
-  width: 5rem;
-  height: 5rem;
+  width: 4rem;
+  height: 4rem;
   background: rgb(255, 255, 255);
   border-radius: 20px;
   font-size: 2em;
@@ -60,7 +60,7 @@ main .password-generator .field .output .output_valid {
   justify-content: center;
   align-items: center;
   border-radius: 20px;
-  /*      animation: appear 2s; */
+  animation: appear 2s;
 }
 main .password-generator .field .output .output_backdrop {
   position: relative;
@@ -85,6 +85,16 @@ main .password-generator .field .output .output_backdrop {
   100% {
     opacity: 1;
   }
+}
+main .password-generator #passwordCopy {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.5em;
+  background: transparent;
+  border: none;
+  color: white;
+  width: 30rem;
+  opacity: 0;
 }
 main .password-generator .btn_container {
   display: flex;
