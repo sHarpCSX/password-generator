@@ -9,64 +9,26 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;700&display=swap" rel="stylesheet">
-  <title>Password Magic</title>
+  <title>Password Generator</title>
   <script type="module" src="app.js" defer></script>
 </head>
 
 <body>
   <header>
-    <h1>Password Magic</h1>
-    <p>Welche Anforderungen muss dein Passwort erfüllen?</p>
+    <h1>Password Generator</h1>
+    <p>Wähle die Anforderungen an dein Passwort aus und klicke auf "Erstellen"</p>
   </header>
 
 
   <main>
 
     <div class="password-generator">
-      <div class="field">
-        <div class="output">
-          <div class="output_backdrop"></div>
-          <div class="output_valid"></div>
-        </div>
-        <div class="output">
-          <div class="output_backdrop"></div>
-          <div class="output_valid"></div>
-        </div>
-        <div class="output">
-          <div class="output_backdrop"></div>
-          <div class="output_valid"></div>
-        </div>
-        <div class="output">
-          <div class="output_backdrop"></div>
-          <div class="output_valid"></div>
-        </div>
-        <div class="output">
-          <div class="output_backdrop"></div>
-          <div class="output_valid"></div>
-        </div>
-        <div class="output">
-          <div class="output_backdrop"></div>
-          <div class="output_valid"></div>
-        </div>
-        <div class="output">
-          <div class="output_backdrop"></div>
-          <div class="output_valid"></div>
-        </div>
-        <div class="output">
-          <div class="output_backdrop"></div>
-          <div class="output_valid"></div>
-        </div>
-        <div class="output">
-          <div class="output_backdrop"></div>
-          <div class="output_valid"></div>
-        </div>
-        <div class="output">
-          <div class="output_backdrop"></div>
-          <div class="output_valid"></div>
-        </div>
-
+      <ol class="field">
+      </ol>
+      <div class="btn_container">
+        <button class="btn" id="generate_btn">Erstellen</button>
+        <button class="btn" id="copy_btn" onclick=" () =>{navigator.clipboard.writeText(password)}">Kopieren</button>
       </div>
-      <button class="btn" id="copy_btn">Kopieren</button>
     </div>
 
     <div class="requirements">
@@ -89,11 +51,10 @@
 
         <div id="length_slider" class="form-control">
           <label for="length">Anzahl Zeichen:</label>
-          <input type="range" min="0" max="50" value="25" class="length_slider" onchange="setLength()" name="length">
+          <input type="range" min="0" max="50" value="25" step="1" class="length_slider" name="length">
           <span id="length_value">25</span>
         </div>
       </form>
-      <button class="btn">generiere Passwort</button>
     </div>
   </main>
 </body>

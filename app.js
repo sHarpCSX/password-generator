@@ -1,17 +1,39 @@
 import Password from "/Password.js";
+import List from "/List.js";
 
-function getString() {
-  const password = new Password(letters, numbers, specials);
-  const string = password.createString();
+const btn = document.getElementById("generate_btn");
+const listElement = document.querySelector(".field");
+const length = document.querySelector(".length_slider");
+const lengthValue = document.getElementById("length_value");
 
-  for (let i = 0; i < string.length; i++) {
-    console.log(string[i]);
-    i++;
-  }
+let passwordLength = 25;
 
-  return password.createString();
+function createPassword(length, letters, numbers, specials) {
+  const string = new Password(length, letters, numbers, specials);
+  const password = string.createPassword();
+
+  const list = new List(password, string, listElement, passwordLength);
+  list.updateList();
+  savePassword(password);
+
+  // TODO: Copy password to clipboard and adjust styling
 }
 
-const btn = document.getElementById("copy_btn");
+function savePassword(password) {
+  const divValid = document.querySelectorAll(".output .output_valid");
+  const outputs = [...divValid];
+  let i = 0;
+  for (const divValid of outputs) {
+    divValid.textContent = password[i];
+    i++;
+  }
+}
 
-btn.addEventListener("click", getString);
+length.onchange = function () {
+  passwordLength = length.valueAsNumber;
+  lengthValue.textContent = passwordLength;
+};
+
+btn.addEventListener("click", () => {
+  createPassword(passwordLength, letters, numbers, specials);
+});

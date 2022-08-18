@@ -1,22 +1,28 @@
-const lettersArray = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-const numbersArray = "1234567890";
-const specialsArray = "!$§%&?:;";
+const lettersString = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+const numbersString = "1234567890";
+const specialsString = "!$§%&?:;()@€-<>#";
 
 export default class Password {
-  constructor(letters, numbers, specials) {
+  constructor(length, letters, numbers, specials) {
+    this.length = length;
     this.letters = letters;
     this.numbers = numbers;
     this.specials = specials;
-    this.string = [];
+    this.string = "";
+    this.password = "";
   }
 
-  createString() {
-    if (this.letters) this.string += lettersArray;
+  createPassword() {
+    if (this.letters.checked) this.string += lettersString;
 
-    if (this.numbers) this.string += numbersArray;
+    if (this.numbers.checked) this.string += numbersString;
 
-    if (this.specials) this.string += specialsArray;
+    if (this.specials.checked) this.string += specialsString;
 
-    return this.string;
+    for (let i = 0; i < this.length; i++) {
+      const char = this.string[Math.floor(Math.random() * this.string.length)];
+      this.password += char;
+    }
+    return this.password;
   }
 }
