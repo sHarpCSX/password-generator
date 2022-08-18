@@ -93,7 +93,7 @@ main .password-generator #passwordCopy {
   background: transparent;
   border: none;
   color: white;
-  width: 30rem;
+  width: 50%;
   opacity: 0;
 }
 main .password-generator .btn_container {
